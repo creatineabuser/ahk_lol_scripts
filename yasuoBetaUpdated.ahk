@@ -40,3 +40,20 @@ $*F6::
     toggle := !toggle
 return
 
+
+toggle1 := 0  
+
+
+SetTimer, PressA, Off
+
+$*F3::
+    toggle1 := !toggle1 
+    if (toggle1)
+        SetTimer, PressA, 7
+    else
+        SetTimer, PressA, Off
+    return
+
+PressA:
+    SendInput, a
+    return
