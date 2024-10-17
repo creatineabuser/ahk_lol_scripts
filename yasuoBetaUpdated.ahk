@@ -4,9 +4,9 @@ toggle := 0
 PressKeys()
 {
     SendInput, {e}
-    Sleep, 72
+    Sleep, 70
     SendInput, {q}
-    Sleep, 11
+    Sleep, 10
     SendInput, {r}
 }
 
@@ -40,20 +40,15 @@ $*F6::
     toggle := !toggle
 return
 
+PressKeysWall()
+{
+    SendInput, {e}
+    Sleep, 70
+    SendInput, {q}
+    Sleep, 10
+    SendInput, {w}
+}
 
-toggle1 := 0  
-
-
-SetTimer, PressA, Off
-
-$*F3::
-    toggle1 := !toggle1 
-    if (toggle1)
-        SetTimer, PressA, 7
-    else
-        SetTimer, PressA, Off
-    return
-
-PressA:
-    SendInput, a
-    return
+$*XButton2::
+	PressKeysWall()
+return
